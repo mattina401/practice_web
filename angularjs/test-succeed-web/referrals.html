@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="../js/angular.js"></script>
+</head>
+<body>
+
+<div ng-app="myApp" ng-controller="cntrl">
+
+    <select>
+        <option value="">Choose your city</option>
+        <option ng-repeat="city in data">{{city.CITY_NAME}}</option>
+    </select>
+
+    <select>
+        <option value="">Choose your state</option>
+        <option ng-repeat="states in data">{{states.STATE_ABBREVIATION}}</option>
+    </select>
+
+
+</div>
+
+<script>
+    var app = angular.module('myApp', []);
+
+
+    app.controller('cntrl', function ($scope, $http) {
+
+
+        $scope.selectStates = function () {
+            $http.get("select-state.php").success(function (data) {
+                $scope.data = data;
+            });
+        }
+
+        $scope.selectStates();
+
+        $scope.selectCities = function () {
+            $http.get("select-city.php").success(function (data) {
+                $scope.data = data;
+            });
+        }
+
+        $scope.selectCities();
+
+
+
+
+    });
+
+
+</script>
+</body>
+</html>

@@ -1,0 +1,30 @@
+<?php
+/**
+ * Created by PhpStorm.
+ * User: kim
+ * Date: 2016-10-12
+ * Time: 오후 3:31
+ */
+
+include "connectdb.php";
+
+$data=json_decode(file_get_contents("php://input"));
+
+$btnName=$dbhandle -> real_escape_string($data->btnName);
+if($btnName=='Insert') {
+    $id=$dbhandle -> real_escape_string($data->id);
+    $name=$dbhandle -> real_escape_string($data->name);
+
+    $query ="INSERT INTO student VALUES($id,'".$name."')";
+
+    $dbhandle -> query($query);
+
+} else {
+    $id=$dbhandle -> real_escape_string($data->id);
+    $name=$dbhandle -> real_escape_string($data->name);
+    $query="UPDATE student SET studname= '".$name."' WHERE studid=$id";
+    $dbhandle -> query($query);
+}
+
+
+?>

@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+
+    <style type="text/css">
+        #container {
+            height: 450px;
+            width: 650px;
+            margin: 20px auto;
+            position: relative;
+        }
+
+        #img {
+            height: 450px;
+            width: 650px;
+            position: absolute;
+        }
+
+        #left_holder {
+            height: 450px;
+            width: 650px;
+            position: absolute;
+            left: 0px;
+            right: 0px;
+        }
+
+        #right_holder {
+            height: 450px;
+            width: 650px;
+            position: absolute;
+            left: 0px;
+            right: 0px;
+        }
+
+        .left {
+            height: 50px;
+            width: 50px;
+            position: absolute;
+            top: 40%;
+            left: 0px;
+        }
+
+        .right {
+            height: 50px;
+            width: 50px;
+            position: absolute;
+            top: 40%;
+            right: 0px;
+        }
+    </style>
+
+
+    <script type="text/javascript">
+
+        var imagecount = 1;
+        var total = 6;
+
+        function slide_left(x)
+        {
+            var Image = document.getElementById('img');
+
+            imagecount = imagecount - x;
+
+
+            if (imagecount > total) {
+                imagecount = 1;
+            }
+            if (imagecount < 1) {
+                imagecount = total;
+            }
+
+
+            Image.src = "img/img-" + imagecount + ".png";
+        }
+
+
+        function slide_right(x)
+        {
+            var Image = document.getElementById('img');
+            imagecount = imagecount + x;
+
+            if (imagecount > total) {
+                imagecount = 1;
+            }
+            if (imagecount < 1) {
+                imagecount = total;
+            }
+
+
+            Image.src = "img/img-" + imagecount + ".png";
+        }
+
+        window.setInterval(function slideA() {
+            var Image = document.getElementById('img');
+            imagecount = imagecount + 1;
+            if (imagecount > total) {
+                imagecount = 1;
+            }
+            if (imagecount < 1) {
+                imagecount = total;
+            }
+            Image.src = "img/img-" + imagecount + ".png";
+        }, 5000);
+
+    </script>
+</head>
+
+
+<body onload="slideA()">
+
+<div id="container">
+    <img src="img/img-1.PNG" id="img"/>
+
+    <div id="left_holder">
+        <img onclick="slide_left(1); return false" class="left" src="img/left.png"/>
+    </div>
+
+    <div id="right_holder">
+        <img onclick="slide_right(1); return false" class="right" src="img/right.png"/>
+    </div>
+
+</div>
+
+
+</body>
+</html>

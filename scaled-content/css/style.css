@@ -1,0 +1,403 @@
+
+#header {
+
+    position: fixed;
+    width: 100%;
+
+    -webkit-transition: 1s;
+    -moz-transition: 1s;
+    -o-transition: 1s;
+    -ms-transition: 1s;
+    transition: 1s;
+}
+
+.container {
+    width: 100%;
+    height: 130px;
+    position: absolute;
+    bottom: 0;
+    background-color: #17bcdf;
+
+}
+
+.change {
+
+    background-color: #17bcdf;
+
+    -webkit-transition: background-color 1.5s;
+    -moz-transition: background-color 1.5s;
+    -o-transition: background-color 1.5s;
+    -ms-transition: background-color 1.5s;
+    transition: background-color 1.5s;
+
+}
+
+.change1 {
+
+    background-color: #FFF;
+    border-bottom: 0.3px solid #17bcdf;
+
+    -webkit-transition: background-color 1.5s;
+    -moz-transition: background-color 1.5s;
+    -o-transition: background-color 1.5s;
+    -ms-transition: background-color 1.5s;
+    transition: background-color 1.5s;
+
+}
+
+.slide {
+
+    transform: translate(0, -100%);
+
+    -webkit-transition: 1s;
+    -moz-transition: 1s;
+    -o-transition: 1s;
+    -ms-transition: 1s;
+    transition: 1s;
+
+}
+
+#header ul li {
+    display: inline-block;
+    margin-right: 60px;
+
+}
+
+.footer {
+    text-align: center;
+}
+
+.footer ul li {
+    display: inline-block;
+    margin-right: 60px;
+
+}
+
+#header ul li:last-child {
+    margin-right: 0;
+
+}
+
+#header ul li:first-child {
+    margin-left: 500px;
+
+}
+
+#header ul li a {
+
+    text-decoration: none;
+    text-transform: uppercase;
+    font-family: Arial, sans-serif;
+}
+
+.row div {
+    display: inline-block;
+
+}
+
+
+#what-container1 {
+    min-height: 146px;
+
+}
+
+#what-container2 {
+    min-height: 146px;
+
+}
+
+#main-dino {
+
+    width: 183px;
+    height: 593px;
+    background: url('../IMG/main-ani-shortversion.png') no-repeat;
+
+}
+
+.run-ani {
+
+    animation: play-main 7s steps(159) forwards;
+    -webkit-animation: play-main 7s steps(159) forwards;
+    -moz-animation: play-main 7s steps(159) forwards;
+    -o-animation: play-main 7s steps(159) forwards;
+    -ms-animation: play-main 7s steps(159) forwards;
+}
+
+
+#dino-programming {
+
+    margin: auto;
+    width: 176px;
+    height: 146px;
+    background: url('../IMG/dino-programming.png');
+    border: 5px solid #17bcdf;
+    border-radius: 25px;
+    animation: play-pro 10s steps(19) infinite;
+    -webkit-animation: play-pro 10s steps(19) infinite;
+    -moz-animation: play-pro 10s steps(19) infinite;
+    -o-animation: play-pro 10s steps(19) infinite;
+    -ms-animation: play-pro 10s steps(19) infinite;
+
+}
+
+#dino-team {
+
+    margin: auto;
+    width: 238px;
+    height: 149px;
+    background: url('../IMG/teamwork.png');
+    border: 5px solid #17bcdf;
+    border-radius: 25px;
+    animation: play-team 5s steps(9) infinite;
+    -webkit-animation: play-team 5s steps(9) infinite;
+    -moz-animation: play-team 5s steps(9) infinite;
+    -o-animation: play-team 5s steps(9) infinite;
+    -ms-animation: play-team 5s steps(9) infinite;
+
+}
+
+.dino1 {
+
+    animation: play 2s steps(30);
+    -webkit-animation: play 2s steps(30);
+
+}
+
+.dino9 {
+
+    animation: play9 1s steps(13);
+    -webkit-animation: play9 1s steps(13);
+
+}
+
+@keyframes play {
+    0% {
+        background-position: 0;
+    }
+    100% {
+        background-position: -27090px;
+    }
+}
+
+@-webkit-keyframes play {
+    0% {
+
+        background-position: 0;
+    }
+    100% {
+
+        background-position: -27090px;
+    }
+}
+
+@-moz-keyframes play {
+    0% {
+
+        background-position: 0;
+    }
+    100% {
+
+        background-position: -27090px;
+    }
+}
+
+@-o-keyframes play {
+    0% {
+
+        background-position: 0;
+    }
+    100% {
+
+        background-position: -27090px;
+    }
+}
+
+@-ms-keyframes play {
+    0% {
+
+        background-position: 0;
+    }
+    100% {
+
+        background-position: -27090px;
+    }
+}
+
+
+@keyframes play-main {
+    from {
+        background-position: 0;
+    }
+    to {
+        background-position: -29097px;
+    }
+}
+
+@-webkit-keyframes play-main {
+    from {
+
+        background-position: 0;
+    }
+    to {
+
+        background-position: -29097px;
+    }
+}
+
+@-moz-keyframes play-main {
+    from {
+
+        background-position: 0;
+    }
+    to {
+
+        background-position: -29097px;
+    }
+}
+@-o-keyframes play-main {
+    from {
+
+        background-position: 0;
+    }
+    to {
+
+        background-position: -29097px;
+    }
+}
+@-ms-keyframes play-main {
+    from {
+
+        background-position: 0;
+    }
+    to {
+
+        background-position: -29097px;
+    }
+}
+
+
+
+
+
+@keyframes play9 {
+    0% {
+        background-position: 0;
+    }
+    100% {
+        background-position: -11739px;
+    }
+}
+
+@-webkit-keyframes play9 {
+    0% {
+        background-position: 0;
+    }
+    100% {
+        background-position: -11739px;
+    }
+}
+
+@keyframes play-pro {
+    0% {
+        background-position: 0;
+    }
+    100% {
+        background-position: -3344px;
+    }
+}
+
+@-webkit-keyframes play-pro {
+    0% {
+        background-position: 0;
+    }
+    100% {
+        background-position: -3344px;
+    }
+}
+
+@-moz-keyframes play-pro {
+    0% {
+        background-position: 0;
+    }
+    100% {
+        background-position: -3344px;
+    }
+}
+
+@-o-keyframes play-pro {
+    0% {
+        background-position: 0;
+    }
+    100% {
+        background-position: -3344px;
+    }
+}
+
+@-ms-keyframes play-pro {
+    0% {
+        background-position: 0;
+    }
+    100% {
+        background-position: -3344px;
+    }
+}
+
+@keyframes play-team {
+    0% {
+        background-position: 0;
+    }
+    100% {
+        background-position: -2142px;
+    }
+}
+
+@-webkit-keyframes play-team {
+    0% {
+        background-position: 0;
+    }
+    100% {
+        background-position: -2142px;
+    }
+}
+
+@-moz-keyframes play-team {
+    0% {
+        background-position: 0;
+    }
+    100% {
+        background-position: -2142px;
+    }
+}
+
+
+@-o-keyframes play-team {
+    0% {
+        background-position: 0;
+    }
+    100% {
+        background-position: -2142px;
+    }
+}
+
+
+@-ms-keyframes play-team {
+    0% {
+        background-position: 0;
+    }
+    100% {
+        background-position: -2142px;
+    }
+}
+
+/*
+@media screen and (max-width: 480px) {
+
+    body {
+        float: left;
+        padding:0;
+        width:94%;
+        margin:3%;
+    }
+
+}
+*/
