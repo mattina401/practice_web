@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+<h1 id="bigOne"></h1>
+
+<script src="https://www.gstatic.com/firebasejs/3.5.0/firebase.js"></script>
+<script>
+    // Initialize Firebase
+    var config = {
+        apiKey: "AIzaSyBEPoJJa12RRHKjQbl1H8Qbmjd89ARHLIk",
+        authDomain: "link2list-c7a0e.firebaseapp.com",
+        databaseURL: "https://link2list-c7a0e.firebaseio.com",
+        storageBucket: "",
+        messagingSenderId: "904350192959"
+    };
+    firebase.initializeApp(config);
+
+    var bigOne = document.getElementById('bigOne');
+    var dbRef = firebase.database().ref().child('text');
+    dbRef.on('value', snap => bigOne.innerText = snap.val());
+
+
+
+</script>
+</body>
+</html>
