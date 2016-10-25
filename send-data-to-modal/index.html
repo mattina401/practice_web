@@ -1,0 +1,46 @@
+<!doctype html>
+<html ng-app="ui.bootstrap.demo">
+<head>
+
+    <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.2.16/angular.js"></script>
+    <script src="//angular-ui.github.io/bootstrap/ui-bootstrap-tpls-0.11.2.js"></script>
+    <link href="//netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css" rel="stylesheet">
+    <script src="example.js"></script>
+    <link href="./css/style.css" rel="stylesheet">
+    <link href="css/bootstrap.css">
+    <link href="./js/angular.js">
+    <link href="js/jquery-3.1.1.js">
+</head>
+<body>
+
+<div ng-controller="ModalDemoCtrl">
+    <input type="text" ng-model="nameFilter" />
+    <a href="#" ng-click="order = 'id'">Order by id</a>
+    <a href="#" ng-click="order = 'name'">Order by name</a>
+    <a href="#" ng-click="order = 'age'">Order by age</a>
+
+    <ul class="grid" masonry="true">
+        <li ng-repeat="item in items | filter: { name: nameFilter } | orderBy: order">
+            <span>{{item.name}}</span>
+            <img ng-src="{{item.picture}}" width="100" ng-click="open(item)"/>
+        </li>
+    </ul>
+</div>
+
+
+<script type="text/ng-template" id="myModalContent.html">
+    <div class="modal-header">
+        <h3 class="modal-title">I'm a modal!</h3>
+    </div>
+    <div class="modal-body">
+        {{item.name}}
+    </div>
+    <div class="modal-footer">
+        <button class="btn btn-primary" ng-click="ok()">OK</button>
+        <button class="btn btn-warning" ng-click="cancel()">Cancel</button>
+    </div>
+</script>
+
+
+</body>
+</html>
