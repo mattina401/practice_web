@@ -13,23 +13,21 @@
 
 
     <!--jquery-->
-    <script src="js/jquery-3.1.1.js"></script>
+    <script src="./js/jquery-3.1.1.js"></script>
     <!-- Bootstrap core CSS -->
-    <link href="css/bootstrap.css" rel="stylesheet">
+    <link href="./css/bootstrap.css" rel="stylesheet">
     <!--Angular-->
     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.5/angular.min.js"></script>
-    <script type="text/javascript" src="app/app.js"></script>
+    <script type="text/javascript" src="./app/app.js"></script>
 
     <!-- Custom styles for this template -->
-    <link href="css/styles.css" rel="stylesheet">
-    <link href="css/taskman.css" rel="stylesheet">
-    <link href="css/font-awesome.min.css" rel="stylesheet">
+    <link href="./css/styles.css" rel="stylesheet">
+    <link href="./css/taskman.css" rel="stylesheet">
+    <link href="./css/font-awesome.min.css" rel="stylesheet">
 
     <link href="http://fonts.googleapis.com/css?family=Open+Sans:400,600,300,700" rel="stylesheet" type="text/css">
 
     <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css" rel="stylesheet">
-
-
 
 </head>
 <body ng-app="myApp" ng-controller="cntrl">
@@ -40,6 +38,7 @@
 
 
 <input type="text" ng-model="email">
+<input type="password" ng-model="password">
 
 <input type="button" value="button" ng-click="insert(email,password)">
 

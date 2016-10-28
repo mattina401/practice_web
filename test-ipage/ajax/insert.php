@@ -1,10 +1,11 @@
 <?php
 session_start();
-include "./include/db.php";
+include "../include/db.php";
 
 if (isset($_GET['email'])) {
     $email = $_GET['email'];
-    $encodedPass = sha1('1111');
+    $password = $_GET['password'];
+    $encodedPass = sha1($password);
 
 
     $query = "INSERT INTO user(email,password)  VALUES ('$email','$encodedPass')";

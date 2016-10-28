@@ -6,7 +6,7 @@
  * Time: 오후 9:49
  */
 
-include "./include/db.php";
+include "../include/db.php";
 
 
 $query = "SELECT * FROM user";

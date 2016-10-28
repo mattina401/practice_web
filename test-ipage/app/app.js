@@ -13,8 +13,8 @@ app.controller('cntrl', function ($scope, $http, $window) {
         })
     }
 
-    $scope.insert = function (email) {
-        $http.post("../ajax/insert.php?email=" + email).success(function (data) {
+    $scope.insert = function (email,password) {
+        $http.post("../ajax/insert.php?email=" + email+"&password=" + password).success(function (data) {
 
             console.log(email);
             console.log(data);

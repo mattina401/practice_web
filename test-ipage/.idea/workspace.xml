@@ -27,8 +27,8 @@
           <file leaf-file-name="index.html" pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/index.html">
               <provider selected="true" editor-type-id="text-editor">
-                <state vertical-scroll-proportion="-14.25">
-                  <caret line="21" column="0" selection-start-line="21" selection-start-column="0" selection-end-line="21" selection-end-column="0" />
+                <state vertical-scroll-proportion="-16.25">
+                  <caret line="29" column="18" selection-start-line="29" selection-start-column="18" selection-end-line="29" selection-end-column="18" />
                   <folding />
                 </state>
               </provider>
@@ -48,23 +48,23 @@
       </split-first>
       <split-second>
         <leaf>
-          <file leaf-file-name="app.js" pinned="false" current-in-tab="true">
+          <file leaf-file-name="app.js" pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/app/app.js">
               <provider selected="true" editor-type-id="text-editor">
-                <state vertical-scroll-proportion="0.31732777">
-                  <caret line="16" column="22" selection-start-line="16" selection-start-column="22" selection-end-line="16" selection-end-column="22" />
+                <state vertical-scroll-proportion="0.0">
+                  <caret line="17" column="0" selection-start-line="17" selection-start-column="0" selection-end-line="17" selection-end-column="0" />
                   <folding />
                 </state>
               </provider>
             </entry>
           </file>
-          <file leaf-file-name="insert.php" pinned="false" current-in-tab="false">
+          <file leaf-file-name="insert.php" pinned="false" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/ajax/insert.php">
               <provider selected="true" editor-type-id="text-editor">
-                <state vertical-scroll-proportion="-1.3571428">
-                  <caret line="2" column="11" selection-start-line="2" selection-start-column="0" selection-end-line="3" selection-end-column="0" />
+                <state vertical-scroll-proportion="0.34731182">
+                  <caret line="17" column="2" selection-start-line="17" selection-start-column="2" selection-end-line="17" selection-end-column="2" />
                   <folding>
-                    <marker date="1477669099090" expanded="true" signature="159:225" placeholder="INSERT INTO user... " />
+                    <marker date="1477672236083" expanded="true" signature="198:264" placeholder="INSERT INTO user... " />
                   </folding>
                 </state>
               </provider>
@@ -73,11 +73,12 @@
           <file leaf-file-name="get.php" pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/ajax/get.php">
               <provider selected="true" editor-type-id="text-editor">
-                <state vertical-scroll-proportion="-2.7142856">
-                  <caret line="4" column="19" selection-start-line="4" selection-start-column="19" selection-end-line="4" selection-end-column="19" />
+                <state vertical-scroll-proportion="-6.785714">
+                  <caret line="10" column="0" selection-start-line="10" selection-start-column="0" selection-end-line="10" selection-end-column="0" />
                   <folding>
-                    <marker date="1477669099099" expanded="true" signature="129:147" placeholder="SELECT * FRO... user" />
-                    <marker date="1477669099099" expanded="true" signature="135:147" placeholder="select * fro... userwhere" />
+                    <element signature="e#6#87#0#PHP" expanded="true" />
+                    <marker date="1477671880011" expanded="true" signature="130:148" placeholder="SELECT * FRO... user" />
+                    <marker date="1477671880011" expanded="true" signature="136:148" placeholder="select * fro... userwhere" />
                   </folding>
                 </state>
               </provider>
@@ -106,10 +107,12 @@
         <option value="$PROJECT_DIR$/js/app.js" />
         <option value="$PROJECT_DIR$/db.php" />
         <option value="$PROJECT_DIR$/js/app/app.js" />
-        <option value="$PROJECT_DIR$/index.html" />
         <option value="$PROJECT_DIR$/insert.php" />
         <option value="$PROJECT_DIR$/get.php" />
         <option value="$PROJECT_DIR$/app/app.js" />
+        <option value="$PROJECT_DIR$/index.html" />
+        <option value="$PROJECT_DIR$/ajax/get.php" />
+        <option value="$PROJECT_DIR$/ajax/insert.php" />
       </list>
     </option>
   </component>
@@ -1160,38 +1163,21 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/index.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-14.25">
-          <caret line="21" column="0" selection-start-line="21" selection-start-column="0" selection-end-line="21" selection-end-column="0" />
+        <state vertical-scroll-proportion="-16.25">
+          <caret line="29" column="18" selection-start-line="29" selection-start-column="18" selection-end-line="29" selection-end-column="18" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/ajax/get.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-2.7142856">
-          <caret line="4" column="19" selection-start-line="4" selection-start-column="19" selection-end-line="4" selection-end-column="19" />
+        <state vertical-scroll-proportion="-6.785714">
+          <caret line="10" column="0" selection-start-line="10" selection-start-column="0" selection-end-line="10" selection-end-column="0" />
           <folding>
-            <marker date="1477669099099" expanded="true" signature="129:147" placeholder="SELECT * FRO... user" />
-            <marker date="1477669099099" expanded="true" signature="135:147" placeholder="select * fro... userwhere" />
+            <element signature="e#6#87#0#PHP" expanded="true" />
+            <marker date="1477671880011" expanded="true" signature="130:148" placeholder="SELECT * FRO... user" />
+            <marker date="1477671880011" expanded="true" signature="136:148" placeholder="select * fro... userwhere" />
           </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/ajax/insert.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-1.3571428">
-          <caret line="2" column="11" selection-start-line="2" selection-start-column="0" selection-end-line="3" selection-end-column="0" />
-          <folding>
-            <marker date="1477669099090" expanded="true" signature="159:225" placeholder="INSERT INTO user... " />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/app.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.31732777">
-          <caret line="16" column="22" selection-start-line="16" selection-start-column="22" selection-end-line="16" selection-end-column="22" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1200,6 +1186,24 @@
         <state vertical-scroll-proportion="0.16344085">
           <caret line="8" column="1" selection-start-line="8" selection-start-column="1" selection-end-line="8" selection-end-column="1" />
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/app.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="17" column="0" selection-start-line="17" selection-start-column="0" selection-end-line="17" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/ajax/insert.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.34731182">
+          <caret line="17" column="2" selection-start-line="17" selection-start-column="2" selection-end-line="17" selection-end-column="2" />
+          <folding>
+            <marker date="1477672236083" expanded="true" signature="198:264" placeholder="INSERT INTO user... " />
+          </folding>
         </state>
       </provider>
     </entry>
