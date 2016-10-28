@@ -11,12 +11,12 @@
 
     <select>
         <option value="">Choose your city</option>
-        <option ng-repeat="city in data">{{city.CITY_NAME}}</option>
+        <option ng-repeat="city in cities">{{city.CITY_NAME}}</option>
     </select>
 
     <select>
         <option value="">Choose your state</option>
-        <option ng-repeat="states in data">{{states.STATE_ABBREVIATION}}</option>
+        <option ng-repeat="states in states">{{states.STATE_ABBREVIATION}}</option>
     </select>
 
 
@@ -31,7 +31,7 @@
 
         $scope.selectStates = function () {
             $http.get("select-state.php").success(function (data) {
-                $scope.data = data;
+                $scope.states = data;
             });
         }
 
@@ -39,7 +39,7 @@
 
         $scope.selectCities = function () {
             $http.get("select-city.php").success(function (data) {
-                $scope.data = data;
+                $scope.cities = data;
             });
         }
 
