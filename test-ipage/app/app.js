@@ -18,6 +18,7 @@ app.controller('cntrl', function ($scope, $http, $window) {
 
             console.log(email);
             console.log(data);
+            $scope.getdata();
         })
     }
 
