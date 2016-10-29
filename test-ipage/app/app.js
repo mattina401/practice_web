@@ -48,6 +48,7 @@ app.controller('cntrl', function ($scope, $http, $window) {
             $http.post("../ajax/signup.php?signupEmail=" + signupEmail + "&signupPassword=" + signupPassword).success(function (data) {
                 $scope.signupData = data;
                 console.log(data);
+                $window.location.href = '../manage.php';
             })
         }
     }
