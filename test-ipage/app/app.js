@@ -5,6 +5,7 @@ var app = angular.module('myApp', []);
 
 app.controller('cntrl', function ($scope, $http, $window) {
 
+    /*
     $scope.getdata = function () {
         $http.post("../ajax/get.php").success(function (data) {
 
@@ -23,6 +24,33 @@ app.controller('cntrl', function ($scope, $http, $window) {
     }
 
     $scope.getdata();
+
+    */
+
+    $scope.login = function(loginEmail,loginPassword) {
+        $http.post("../ajax/login.php?loginEmail=" + loginEmail + "&loginPassword=" + loginPassword).success(function(data) {
+            $scope.loginData = data;
+            console.log(data);
+        })
+    }
+
+    $scope.signup = function(signupEmail,signupPassword,signupConfirmPassword) {
+
+        $scope.signupMsg = "";
+        if(signupPassword != signupConfirmPassword) {
+            $scope.signupMsg = "Password does not match the confirm password ";
+        } else {
+            $http.post("../ajax/signup.php?signupEmail=" + signupEmail + "&signupPassword=" + signupPassword).success(function(data) {
+                $scope.signupData = data;
+                console.log(data);
+            })
+        }
+
+    }
+
+
+
+
 
 });
 
