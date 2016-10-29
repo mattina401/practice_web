@@ -196,20 +196,20 @@ session_start(); ?>
             <br>
             <div class="bs-example bs-example-tabs">
                 <ul class="nav nav-tabs">
-                    <li class="active"><a href="#signin" data-toggle="tab">Change password</a></li>
+                    <li class="active"><a href="#setting" data-toggle="tab">Change password</a></li>
                 </ul>
             </div>
             <div class="modal-body">
                 <div id="myTabContent" class="tab-content">
-                    <div class="tab-pane fade active in" id="signin">
+                    <div class="tab-pane fade active in" id="setting">
                         <form class="form-horizontal">
                             <fieldset>
 
                                 <!-- Password input-->
                                 <div class="control-group">
-                                    <label class="control-label" for="password">New password:</label>
+                                    <label class="control-label" for="newPassword">New password:</label>
                                     <div class="controls">
-                                        <input id="password" ng-model="change.password" name="password"
+                                        <input id="newPassword" ng-model="newPassword" name="newPassword"
                                                class="form-control" type="password" placeholder="********"
                                                class="input-large" required="">
                                         <em>1-8 Characters</em>
@@ -218,19 +218,19 @@ session_start(); ?>
 
                                 <!-- Text input-->
                                 <div class="control-group">
-                                    <label class="control-label" for="reenterpassword">Re-Enter Password:</label>
+                                    <label class="control-label" for="updateConfirmPassword">Re-Enter Password:</label>
                                     <div class="controls">
-                                        <input id="reenterpassword" class="form-control"
-                                               ng-model="change.confirmPassword" name="reenterpassword"
+                                        <input id="updateConfirmPassword" class="form-control"
+                                               ng-model="updateConfirmPassword" name="updateConfirmPassword"
                                                type="password" placeholder="********" class="input-large" required="">
                                     </div>
                                 </div>
-
+                                {{updatePasswordMsg}}
                                 <!-- Button -->
                                 <div class="control-group">
                                     <label class="control-label" for="confirmsignup"></label>
                                     <div class="controls">
-                                        <button id="confirmsignup" ng-click="changePassword()" value="add"
+                                        <button id="confirmsignup" ng-click="updatePassword(newPassword,updateConfirmPassword)" value="add"
                                                 name="confirmsignup" class="btn btn-success">Submit
                                         </button>
                                     </div>
@@ -248,7 +248,6 @@ session_start(); ?>
         </div>
     </div>
 </div>
-<h1>session[userId] = <?php echo $_SESSION['userId']; ?> </h1>
 
 <script>
     $(function () {
