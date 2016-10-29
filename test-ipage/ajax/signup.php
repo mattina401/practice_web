@@ -1,5 +1,4 @@
 <?php
-session_start();
 include "../include/db.php";
 
 if (isset($_GET['signupEmail'])) {

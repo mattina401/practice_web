@@ -31,6 +31,11 @@ app.controller('cntrl', function ($scope, $http, $window) {
         $http.post("../ajax/login.php?loginEmail=" + loginEmail + "&loginPassword=" + loginPassword).success(function(data) {
             $scope.loginData = data;
             console.log(data);
+
+            // login success
+            if(data == "1") {
+                $window.location.href = '../index.php';
+            }
         })
     }
 
@@ -45,7 +50,16 @@ app.controller('cntrl', function ($scope, $http, $window) {
                 console.log(data);
             })
         }
+    }
 
+    $scope.logout = function() {
+        $http.post("../ajax/logout.php").success(function(data) {
+            console.log(data);
+            //log out success
+            if(data == "1") {
+                $window.location.href = '../index.php';
+            }
+        })
     }
 
 

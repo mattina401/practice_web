@@ -1,4 +1,5 @@
 <?php
+//should set the path session.save_path = "/tmp"
 session_start();
 include "../include/db.php";
 
