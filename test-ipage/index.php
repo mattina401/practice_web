@@ -53,32 +53,3 @@
 </section>
 
 <?php include("footer.php"); ?>
-
-
-
-
-
-
-
-
-<!--
-<body ng-app="myApp" ng-controller="cntrl">
-
-<div ng-repeat="user in data">
-    <h1>{{user.email}}</h1>
-</div>
-
-
-<input type="text" ng-model="email">
-<input type="password" ng-model="password">
-
-<input type="button" value="button" ng-click="insert(email,password)">
-
-
-
-
-
-
-</body>
-</html>
--->

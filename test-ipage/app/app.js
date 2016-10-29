@@ -5,28 +5,6 @@ var app = angular.module('myApp', []);
 
 app.controller('cntrl', function ($scope, $http, $window) {
 
-    /*
-     $scope.getdata = function () {
-     $http.post("../ajax/get.php").success(function (data) {
-
-     $scope.data= data;
-     console.log(data);
-     })
-     }
-
-     $scope.insert = function (email,password) {
-     $http.post("../ajax/insert.php?email=" + email+"&password=" + password).success(function (data) {
-
-     console.log(email);
-     console.log(data);
-     $scope.getdata();
-     })
-     }
-
-     $scope.getdata();
-
-     */
-
     $scope.login = function (loginEmail, loginPassword) {
         $http.post("../ajax/login.php?loginEmail=" + loginEmail + "&loginPassword=" + loginPassword).success(function (data) {
             $scope.loginData = data;
@@ -77,13 +55,8 @@ app.controller('cntrl', function ($scope, $http, $window) {
                 }
             })
         }
-
     }
-
-
 });
-
-
 
 //listController
 app.controller('listController', function ($scope, $http,$window) {
@@ -126,7 +99,6 @@ app.controller('listController', function ($scope, $http,$window) {
             $window.location.href = '../task.php';
         })
     }
-
 
     $scope.displayList();
     $scope.displaySharedList();
@@ -172,7 +144,6 @@ app.controller('tasksController', function ($scope, $http) {
         });
     };
 
-
     $scope.editTask = function (editInput, itemId) {
 
         var inputData = {
@@ -183,11 +154,8 @@ app.controller('tasksController', function ($scope, $http) {
         $http.post("../ajax/editTask.php", inputData).success(function (data) {
             getTask();
             console.log(data);
-
         });
     };
-
-
 });
 
 
@@ -199,7 +167,6 @@ app.controller('MainCtrl', ['$scope', 'dataShare',
             dataShare.sendData(listId);
             console.log(listId);
         };
-
     }
 ]);
 app.controller('MainCtrl2', ['$scope', '$http', 'dataShare',
@@ -210,7 +177,6 @@ app.controller('MainCtrl2', ['$scope', '$http', 'dataShare',
         $scope.inviteInfo = {
             email: undefined,
             listId: undefined
-
         }
 
         $scope.invite = function () {
@@ -227,13 +193,13 @@ app.controller('MainCtrl2', ['$scope', '$http', 'dataShare',
             });
         };
 
-
         $scope.$on('data_shared', function () {
             var listId = dataShare.getData();
             $scope.inviteInfo.listId = listId;
         });
     }
 ]);
+
 app.factory('dataShare', function ($rootScope) {
     var service = {};
     service.data = false;
@@ -256,9 +222,7 @@ app.controller('invite', function ($scope, $http, $window) {
         $http.post("../ajax/get-invite.php").success(function (data) {
             $scope.inviteList = data;
             console.log(data);
-
         })
-
     }
 
     $scope.accept = function (sharedId) {
@@ -267,7 +231,6 @@ app.controller('invite', function ($scope, $http, $window) {
             console.log(data);
             $scope.getInvite();
         })
-
     }
 
     $scope.decline = function (sharedId) {
@@ -276,11 +239,7 @@ app.controller('invite', function ($scope, $http, $window) {
             console.log(data);
             $scope.getInvite();
         })
-
     }
 
-
     $scope.getInvite();
-
-
 });

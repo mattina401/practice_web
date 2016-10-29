@@ -154,4 +154,4 @@ if ($_SESSION['userId'] == null)
     </div>
 
 </div>
-<?php include("footer.html"); ?>
+<?php include("footer.php"); ?>

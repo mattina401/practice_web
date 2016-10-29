@@ -6,8 +6,6 @@
         <br>
         <section>
             <div class="container">
-
-
                 <div class="widget-box" id="recent-box" ng-controller="tasksController">
                     <div class="widget-header header-color-blue">
                         <div class="row">
@@ -25,7 +23,6 @@
                                 <input type="text" ng-model="filterTask"
                                        class="form-control search header-elements-margin"
                                        placeholder="Filter Tasks">
-
                             </div>
                         </div>
                     </div>
@@ -70,17 +67,11 @@
                                         </div>
                                     </div>
                                 </form>
-
-
                             </label>
-
                         </div>
-
-
                     </div>
-
                 </div>
             </div>
         </section>
     </div>
-<?php include("footer.html"); ?>
+<?php include("footer.php"); ?>
