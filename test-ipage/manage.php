@@ -13,30 +13,31 @@ if ($_SESSION['userId'] == null)
                    data-target=".bs-modal-message" ng-controller="invite" ng-click="getInvite()"> invitation</a>
             </div>
             <div class="row">
-                <div class="col-md-3 text-center"
+                <div class="col-md-3"
                      style="padding: 10px; margin-top:10px; margin-bottom:10px"
                      ng-repeat="list in displayListData">
-                    <div class="row">
+                    <div class="row text-center">
                         <a><h2 ng-click="goTable(list.listId)" style="color: #8ED2C9">{{list.listName}}</h2></a>
                     </div>
                     <div>
                         <div class="col-sm-8" ng-show="list.listName != null">
-                            <p># of items</p>
+                            <p>{{list.description}}</p>
                         </div>
                         <div class="col-sm-4">
                             <a class="fa fa-users" aria-hidden="true" style="color: #808080" href="#signUp"
                                data-toggle="modal"
                                data-target=".share" ng-controller="MainCtrl"
                                ng-click="send(list.listId)">share</a>
-                            <a class="fa fa-users" aria-hidden="true" style="color: #808080"
+                            <a class="fa fa-remove" aria-hidden="true" style="color: #808080"
                                ng-click="deleteList(list.listId)">delete</a>
                         </div>
                     </div>
                 </div>
-                <div class="col-md-3" style="border: 1px dashed gray; padding: 20px;text-align: center">
-                    <input type="text" value="list name" placeholder="list name" ng-model="newListName">
+                <div class="col-md-3" style="border: 1px dashed gray; padding: 10px;text-align: center">
+                    <input type="text" value="list name" placeholder="List name" ng-model="newListName">
+                    <textarea type="text" value="list des" placeholder="Description" ng-model="newListDes"></textarea>
                     <a class="blog-nav-item glyphicon glyphicon-plus" style="font-size: 50px; color: #8ED2C9"
-                       ng-click="addList(newListName)"></a>
+                       ng-click="addList(newListName,newListDes)"></a>
                 </div>
             </div>
         </div>
@@ -48,14 +49,21 @@ if ($_SESSION['userId'] == null)
             <div class="row column text-center">
                 <h1 class="text-center" style="margin-top: 10px;color: #FF7A5A">Shared lists</h1>
             </div>
-            <div>
+            <div class="row">
                 <div class="col-md-3 text-center" style="padding: 10px; margin-top:10px; margin-bottom:10px"
                      ng-repeat="list in displaySharedListData">
-                    <a><h2 ng-click="goTable(list.listId)" style="color: #FFB85F">{{list.listName}}</h2></a>
-                    <div ng-show="list.listName != null">
+                    <div class="row">
+                        <a><h2 ng-click="goTable(list.listId)" style="color: #FFB85F">{{list.listName}}</h2></a>
+                    </div>
+                    <div class="col-sm-8" ng-show="list.listName != null">
                         <p>Owner:{{list.ownerId}}</p>
                         <p># of items</p>
                     </div>
+                    <div class="col-sm-4">
+                        <a class="glyphicon glyphicon-log-out" aria-hidden="true" style="color: #808080"
+                           ng-click="leaveList(list.listId)">leave</a>
+                    </div>
+
                 </div>
             </div>
 

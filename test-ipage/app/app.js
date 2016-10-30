@@ -82,9 +82,9 @@ app.controller('listController', function ($scope, $http, $window) {
 
 
     // add list
-    $scope.addList = function (newListName) {
+    $scope.addList = function (newListName,newListDes) {
 
-        $http.post("../ajax/addList.php?newListName=" + newListName).success(function (data) {
+        $http.post("../ajax/addList.php?newListName=" + newListName + "&newListDes=" + newListDes).success(function (data) {
             $scope.displayList();
             console.log(data);
 
@@ -100,14 +100,25 @@ app.controller('listController', function ($scope, $http, $window) {
         })
     }
 
-    $scope.deleteList = function(listId) {
+    $scope.deleteList = function (listId) {
         if (confirm("Are you sure to delete this list?")) {
-            $http.post("../ajax/deleteList.php?listId=" + listId).success(function(data) {
+            $http.post("../ajax/deleteList.php?listId=" + listId).success(function (data) {
                 console.log(data);
                 $window.location.href = '../manage.php';
             })
         }
     }
+
+    $scope.leaveList = function (listId) {
+        if (confirm("Are you sure to leave this list?")) {
+            $http.post("../ajax/leaveList.php?listId=" + listId).success(function (data) {
+                console.log(data);
+                $window.location.href = '../manage.php';
+            })
+        }
+    }
+
+
 
     $scope.displayList();
     $scope.displaySharedList();
