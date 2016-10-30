@@ -24,18 +24,20 @@ if ($_SESSION['userId'] == null)
                             <p># of items</p>
                         </div>
                         <div class="col-sm-4">
-                            <a class="fa fa-users" aria-hidden="true" style="color: #808080" href="#signUp" data-toggle="modal"
+                            <a class="fa fa-users" aria-hidden="true" style="color: #808080" href="#signUp"
+                               data-toggle="modal"
                                data-target=".share" ng-controller="MainCtrl"
                                ng-click="send(list.listId)">share</a>
+                            <a class="fa fa-users" aria-hidden="true" style="color: #808080"
+                               ng-click="deleteList(list.listId)">delete</a>
                         </div>
                     </div>
                 </div>
-            </div>
-            <div class="col-md-3" style="border: 1px dashed gray; padding: 20px;text-align: center">
-                <input type="text" value="list name" placeholder="list name" ng-model="newListName">
-                <a class="blog-nav-item glyphicon glyphicon-plus" style="font-size: 50px; color: #8ED2C9"
-                   ng-click="addList(newListName)"></a>
-
+                <div class="col-md-3" style="border: 1px dashed gray; padding: 20px;text-align: center">
+                    <input type="text" value="list name" placeholder="list name" ng-model="newListName">
+                    <a class="blog-nav-item glyphicon glyphicon-plus" style="font-size: 50px; color: #8ED2C9"
+                       ng-click="addList(newListName)"></a>
+                </div>
             </div>
         </div>
     </section>

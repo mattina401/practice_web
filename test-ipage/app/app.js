@@ -100,6 +100,15 @@ app.controller('listController', function ($scope, $http, $window) {
         })
     }
 
+    $scope.deleteList = function(listId) {
+        if (confirm("Are you sure to delete this list?")) {
+            $http.post("../ajax/deleteList.php?listId=" + listId).success(function(data) {
+                console.log(data);
+                $window.location.href = '../manage.php';
+            })
+        }
+    }
+
     $scope.displayList();
     $scope.displaySharedList();
 
