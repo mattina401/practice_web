@@ -59,7 +59,7 @@ app.controller('cntrl', function ($scope, $http, $window) {
 });
 
 //listController
-app.controller('listController', function ($scope, $http,$window) {
+app.controller('listController', function ($scope, $http, $window) {
 
     // display lists
     $scope.displayList = function () {
@@ -160,7 +160,6 @@ app.controller('tasksController', function ($scope, $http) {
 
 
 // send listId to modal
-
 app.controller('MainCtrl', ['$scope', 'dataShare',
     function ($scope, dataShare) {
         $scope.send = function (listId) {
@@ -169,6 +168,7 @@ app.controller('MainCtrl', ['$scope', 'dataShare',
         };
     }
 ]);
+
 app.controller('MainCtrl2', ['$scope', '$http', 'dataShare',
 
     function ($scope, $http, dataShare) {
@@ -213,11 +213,11 @@ app.factory('dataShare', function ($rootScope) {
     return service;
 });
 
-
 //inviteController
 app.controller('invite', function ($scope, $http, $window) {
 
-    $scope.getInvite = function () {
+    getInvite();
+    function getInvite() {
 
         $http.post("../ajax/get-invite.php").success(function (data) {
             $scope.inviteList = data;
@@ -229,7 +229,7 @@ app.controller('invite', function ($scope, $http, $window) {
 
         $http.post("../ajax/accept.php?sharedId=" + sharedId).success(function (data) {
             console.log(data);
-            $scope.getInvite();
+            getInvite();
         })
     }
 
@@ -237,9 +237,8 @@ app.controller('invite', function ($scope, $http, $window) {
 
         $http.post("../ajax/decline.php?sharedId=" + sharedId).success(function (data) {
             console.log(data);
-            $scope.getInvite();
+            getInvite();
         })
     }
 
-    $scope.getInvite();
 });

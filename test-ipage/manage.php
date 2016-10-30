@@ -7,27 +7,34 @@ if ($_SESSION['userId'] == null)
 
     <section ng-controller="listController">
         <div class="container">
-            <h1 class="text-center" style="margin-top: 10px">Manage your lists</h1>
-            <a class="blog-nav-item glyphicon glyphicon-envelope pull-right"  href="#mesagge" data-toggle="modal"
-               data-target=".bs-modal-message" ng-controller="invite" ng-click="getInvite()"> invitation</a>
-            <br>
-            <div class="col-md-3 text-center"
-                 style="padding: 10px; margin-top:10px; margin-bottom:10px"
-                 ng-repeat="list in displayListData">
-
-                <a><h2 ng-click="goTable(list.listId)">{{list.listName}}</h2></a>
-                <div ng-show="list.listName != null">
-                    <p># of items</p>
-
-                    <a class="fa fa-users blog-nav-item" aria-hidden="true" href="#signUp" data-toggle="modal"
-                       data-target=".share" ng-controller="MainCtrl"
-                       ng-click="send(list.listId)">share</a>
+            <div class="row column text-center">
+                <h1 class="text-center" style="margin-top: 10px; color: #00AAA0">Manage your lists</h1>
+                <a class="blog-nav-item glyphicon glyphicon-envelope pull-right" href="#mesagge" data-toggle="modal"
+                   data-target=".bs-modal-message" ng-controller="invite" ng-click="getInvite()"> invitation</a>
+            </div>
+            <div class="row">
+                <div class="col-md-3 text-center"
+                     style="padding: 10px; margin-top:10px; margin-bottom:10px"
+                     ng-repeat="list in displayListData">
+                    <div class="row">
+                        <a><h2 ng-click="goTable(list.listId)" style="color: #8ED2C9">{{list.listName}}</h2></a>
+                    </div>
+                    <div>
+                        <div class="col-sm-8" ng-show="list.listName != null">
+                            <p># of items</p>
+                        </div>
+                        <div class="col-sm-4">
+                            <a class="fa fa-users" aria-hidden="true" style="color: #808080" href="#signUp" data-toggle="modal"
+                               data-target=".share" ng-controller="MainCtrl"
+                               ng-click="send(list.listId)">share</a>
+                        </div>
+                    </div>
                 </div>
-
             </div>
             <div class="col-md-3" style="border: 1px dashed gray; padding: 20px;text-align: center">
                 <input type="text" value="list name" placeholder="list name" ng-model="newListName">
-                <a class="blog-nav-item glyphicon glyphicon-plus" style="font-size: 50px" ng-click="addList(newListName)"></a>
+                <a class="blog-nav-item glyphicon glyphicon-plus" style="font-size: 50px; color: #8ED2C9"
+                   ng-click="addList(newListName)"></a>
 
             </div>
         </div>
@@ -36,17 +43,20 @@ if ($_SESSION['userId'] == null)
 
     <section ng-controller="listController">
         <div class="container">
-            <h1 class="text-center" style="margin-top: 10px">Shared lists</h1>
-            <br>
-            <div class="col-md-3 text-center" style="padding: 10px; margin-top:10px; margin-bottom:10px" ng-repeat="list in displaySharedListData">
-                <a><h2 ng-click="goTable(list.listId)">{{list.listName}}</h2></a>
-                <div ng-show="list.listName != null">
-                    <p>Owner:{{list.ownerId}}</p>
-                    <p># of items</p>
-
-
+            <div class="row column text-center">
+                <h1 class="text-center" style="margin-top: 10px;color: #FF7A5A">Shared lists</h1>
+            </div>
+            <div>
+                <div class="col-md-3 text-center" style="padding: 10px; margin-top:10px; margin-bottom:10px"
+                     ng-repeat="list in displaySharedListData">
+                    <a><h2 ng-click="goTable(list.listId)" style="color: #FFB85F">{{list.listName}}</h2></a>
+                    <div ng-show="list.listName != null">
+                        <p>Owner:{{list.ownerId}}</p>
+                        <p># of items</p>
+                    </div>
                 </div>
             </div>
+
         </div>
     </section>
 
@@ -106,7 +116,7 @@ if ($_SESSION['userId'] == null)
     <!-- invitation message -->
     <div class="modal fade bs-modal-message" id="myModal" tabindex="-1" role="dialog"
          aria-labelledby="mySmallModalLabel"
-         aria-hidden="true" ng-controller="invite">
+         aria-hidden="true">
         <div class="modal-dialog modal-sm">
             <div class="modal-content">
                 <br>
@@ -121,7 +131,7 @@ if ($_SESSION['userId'] == null)
                             <form class="form-horizontal">
                                 <fieldset>
 
-                                    <div class="control-group">
+                                    <div class="control-group" ng-controller="invite">
                                         <label class="control-label" for="signin"></label>
                                         <div class="controls" ng-repeat="shared in inviteList">
                                             <div>
