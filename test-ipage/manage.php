@@ -49,9 +49,6 @@ if ($_SESSION['userId'] == null)
                                ng-click="send(list.listId)">share</a>
                             <a class="fa fa-remove" aria-hidden="true" style="color: #808080"
                                ng-click="deleteList(list.listId)">delete</a>
-                            <a class="glyphicon  glyphicon-cog" aria-hidden="true"
-                               ng-click="" style="color: #808080">edit</a>
-
 
                             <a class="glyphicon  glyphicon-cog" aria-hidden="true" style="color: #808080" href="#edit"
                                data-toggle="modal"
@@ -85,11 +82,11 @@ if ($_SESSION['userId'] == null)
                 <div class="col-md-3 text-center" style="padding: 10px; margin-top:10px; margin-bottom:10px"
                      ng-repeat="list in displaySharedListData">
                     <div class="row">
-                        <a><h2 ng-click="goTable(list.listId)" style="color: #FFB85F">{{list.listName}}</h2></a>
+                        <h2 ng-click="goTable(list.listId)"><a style="color: #FFB85F">{{list.listName}}</a></h2>
                     </div>
                     <div class="col-sm-8" ng-show="list.listName != null">
                         <p>Owner:{{list.ownerId}}</p>
-                        <p># of items</p>
+                        <p>{{list.description}}</p>
                     </div>
                     <div class="col-sm-4">
                         <a class="glyphicon glyphicon-log-out" aria-hidden="true" style="color: #808080"
