@@ -23,8 +23,8 @@ div.task label.checkbox{
 	font-weight: normal;
 }
 .header-color-blue {
-    background: #307ECC;
-    border: 1px solid #307ECC;
+    background: #6D929B;
+    border: 1px solid #6D929B;
     box-sizing: content-box;
     position: relative;
     min-height: 38px;
@@ -35,7 +35,7 @@ div.task label.checkbox{
     margin-top: 6px;
 }
 .header-color-blue+.widget-body {
-border-color: #307ECC;
+border-color: #6D929B;
 margin-top: -10px;
 padding: 20px 10px;
 }

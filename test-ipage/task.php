@@ -6,23 +6,25 @@
         <br>
         <section>
             <div class="container">
+                <a href="manage.php" style="color: grey"><li class="glyphicon glyphicon-arrow-left"></li> back</a>
                 <div class="widget-box" id="recent-box" ng-controller="tasksController">
                     <div class="widget-header header-color-blue">
                         <div class="row">
-                            <div class="col-sm-6 text-center">
-                                <h4>TASK MANAGER</h4>
+                            <div class="col-sm-6 col-xs-5 text-center" style="padding-top: 15px;">
+                                <h4>LIST MANAGER</h4>
                             </div>
-                            <div class="col-sm-3">
-                                <button ng-click="addNewClicked=!addNewClicked;"
-                                        class="btn btn-sm btn-danger header-elements-margin"><i
-                                        class="glyphicon  glyphicon-plus"></i>&nbsp;Add New Task
-                                </button>
-                            </div>
-                            <div class="col-sm-3">
+
+                            <div class="col-sm-3 col-xs-4 pull-right">
 
                                 <input type="text" ng-model="filterTask"
                                        class="form-control search header-elements-margin"
-                                       placeholder="Filter Tasks">
+                                       placeholder="Filter">
+                            </div>
+                            <div class="col-sm-3 col-xs-3 pull-right">
+                                <button ng-click="addNewClicked=!addNewClicked;"
+                                        class="btn btn-sm btn-danger header-elements-margin"><i
+                                        class="glyphicon  glyphicon-plus"></i>&nbsp;Add New
+                                </button>
                             </div>
                         </div>
                     </div>
@@ -47,11 +49,13 @@
                                     value="{{item.status}}"
                                     ng-checked="item.status==2"
                                     ng-click="toggleStatus(item.itemId,item.status, item.itemName)"/>
-                                <span ng-class="{strike:item.status==2}">{{item.itemName}} [{{item.itemId}}] - Last Updated On {{item.updatedTime}}</span>
+                                <span ng-class="{strike:item.status==2}">{{item.itemName}} [{{item.itemId}}]</span>
                                 <a ng-click="deleteTask(item.itemId)" class="pull-right"><i
-                                        class="glyphicon glyphicon-trash"></i></a>
+                                        class="glyphicon glyphicon-trash"></i> remove</a>
                                 <a ng-click="Clicked=!Clicked;" class="pull-right"><i
-                                        class="glyphicon glyphicon-pencil"></i></a>
+                                        class="glyphicon glyphicon-pencil"></i> edit</a>
+                                <span class="pull-right"  style="font-size: 10px">Last Updated On {{item.updatedTime}}</span>
+
 
                                 <form ng-init="Clicked=false;" ng-if="Clicked" id="newTaskForm" class="add-task">
                                     <div class="form-actions">

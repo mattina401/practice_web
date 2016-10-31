@@ -62,7 +62,7 @@ if ($_SESSION['userId'] == null)
 
 
                 <div class="col-md-3 col-sm-4 col-xs-6"
-                     style="border: 1px dashed gray; padding: 10px;margin-top:10px; margin-bottom:10px;text-align: center">
+                     style="border: 1px dashed gray; border-radius: 5%; padding: 10px; margin-top:10px; margin-bottom:10px;text-align: center">
                     <input type="text" value="list name" placeholder="List name" ng-model="newListName">
                     <textarea type="text" value="list des" placeholder="Description" ng-model="newListDes"></textarea>
                     <a class="blog-nav-item glyphicon glyphicon-plus" style="font-size: 50px; color: #8ED2C9"
@@ -79,7 +79,7 @@ if ($_SESSION['userId'] == null)
                 <h1 class="text-center" style="margin-top: 10px;color: #FF7A5A">Shared lists</h1>
             </div>
             <div class="row">
-                <div class="col-md-3 text-center" style="padding: 10px; margin-top:10px; margin-bottom:10px"
+                <div class="col-md-3 col-sm-4 col-xs-6 text-center" style="padding: 10px; margin-top:10px; margin-bottom:10px"
                      ng-repeat="list in displaySharedListData">
                     <div class="row">
                         <h2 ng-click="goTable(list.listId)"><a style="color: #FFB85F">{{list.listName}}</a></h2>
