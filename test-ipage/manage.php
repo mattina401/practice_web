@@ -4,7 +4,6 @@ if ($_SESSION['userId'] == null)
     echo "none"
 ?>">
 
-
     <section ng-controller="listController">
         <div class="container">
             <div class="row column text-center">
@@ -13,15 +12,35 @@ if ($_SESSION['userId'] == null)
                    data-target=".bs-modal-message" ng-controller="invite" ng-click="getInvite()"> invitation</a>
             </div>
             <div class="row">
-                <div class="col-md-3"
-                     style="padding: 10px; margin-top:10px; margin-bottom:10px"
-                     ng-repeat="list in displayListData">
-                    <div class="row text-center">
-                        <a><h2 ng-click="goTable(list.listId)" style="color: #8ED2C9">{{list.listName}}</h2></a>
+                <div class="col-md-3 col-sm-4 col-xs-6" ng-repeat="list in displayListData"
+                     style="padding: 10px; margin-top:10px; margin-bottom:10px;">
+
+<!--
+                    <div class="col-md-8 col-sm-8 col-xs-8" style="border: 1px dashed gray; position: absolute"
+                         ng-init="Clicked=false;" ng-if="Clicked">
+
+                        <div class="">
+                            <input style="position: relative; max-width: 140px;" type="text" placeholder="{{list.listName}}">
+                        </div>
+                        <div class="">
+                            <textarea placeholder="{{list.description}}" style="max-width: 140px;"></textarea>
+                        </div>
+
+                        <div class="">
+                            <a class="glyphicon glyphicon-pencil" ng-click="">apply</a>
+                        </div>
+
                     </div>
+
+-->
+                    <div class="text-center">
+                        <h2 id="list-name" ng-click="goTable(list.listId)">
+                            <a style="color: #8ED2C9">{{list.listName}}</a></h2>
+                    </div>
+
                     <div>
                         <div class="col-sm-8" ng-show="list.listName != null">
-                            <p>{{list.description}}</p>
+                            <span id="list-des">{{list.description}}</span>
                         </div>
                         <div class="col-sm-4">
                             <a class="fa fa-users" aria-hidden="true" style="color: #808080" href="#signUp"
@@ -30,19 +49,32 @@ if ($_SESSION['userId'] == null)
                                ng-click="send(list.listId)">share</a>
                             <a class="fa fa-remove" aria-hidden="true" style="color: #808080"
                                ng-click="deleteList(list.listId)">delete</a>
+                            <a class="glyphicon  glyphicon-cog" aria-hidden="true"
+                               ng-click="" style="color: #808080">edit</a>
+
+
+                            <a class="glyphicon  glyphicon-cog" aria-hidden="true" style="color: #808080" href="#edit"
+                               data-toggle="modal"
+                               data-target=".edit" ng-controller="MainCtrl"
+                               ng-click="send(list.listId)">edit</a>
                         </div>
                     </div>
+
+
                 </div>
-                <div class="col-md-3" style="border: 1px dashed gray; padding: 10px;text-align: center">
+
+
+                <div class="col-md-3 col-sm-4 col-xs-6"
+                     style="border: 1px dashed gray; padding: 10px;margin-top:10px; margin-bottom:10px;text-align: center">
                     <input type="text" value="list name" placeholder="List name" ng-model="newListName">
                     <textarea type="text" value="list des" placeholder="Description" ng-model="newListDes"></textarea>
                     <a class="blog-nav-item glyphicon glyphicon-plus" style="font-size: 50px; color: #8ED2C9"
                        ng-click="addList(newListName,newListDes)"></a>
                 </div>
             </div>
+
         </div>
     </section>
-
 
     <section ng-controller="listController">
         <div class="container">
@@ -71,7 +103,68 @@ if ($_SESSION['userId'] == null)
     </section>
 
 
-    <!-- Modal -->
+    <!-- Modal for editing text -->
+    <div class="modal fade edit" id="editModal" tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel"
+         aria-hidden="true" ng-controller="MainCtrl2">
+        <div class="modal-dialog modal-sm">
+            <div class="modal-content">
+                <br>
+                <div class="bs-example bs-example-tabs">
+                    <ul class="nav nav-tabs">
+                        <h1>Edit List</h1>
+                    </ul>
+                </div>
+                <div class="modal-body">
+                    <div id="myTabContent" class="tab-content">
+                        <div class="tab-pane fade active in">
+                            <form class="form-horizontal">
+                                <fieldset>
+                                    <div class="control-group">
+                                        <label class="control-label" for="listName">List Name:</label>
+                                        <div class="controls">
+                                            <input required="" id="listName" ng-model="listName"
+                                                   name="listName"
+                                                   type="text" class="form-control" placeholder="{{listName}}"
+                                                   class="input-medium" required="">
+                                            <label class="control-label" for="description">Description:</label>
+                                            <textarea class="input-lg" id="description" ng-model="description" placeholder="{{description}}"></textarea>
+                                        </div>
+                                    </div>
+                                    <!-- Button -->
+                                    <div class="control-group">
+                                        <label class="control-label" for="update"></label>
+                                        <div class="controls">
+                                            <button id="update" ng-click="updateListInfo(listName,description)" name="update"
+                                                    class="btn btn-success">
+                                                apply
+                                            </button>
+                                        </div>
+                                    </div>
+                                </fieldset>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <center>
+                        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                    </center>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+
+
+
+
+
+
+
+
+    <!-- Modal for share -->
     <div class="modal fade share" id="myModal" tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel"
          aria-hidden="true" ng-controller="MainCtrl2">
         <div class="modal-dialog modal-sm">
@@ -173,5 +266,8 @@ if ($_SESSION['userId'] == null)
         </div>
     </div>
 
+
 </div>
+
+
 <?php include("footer.php"); ?>

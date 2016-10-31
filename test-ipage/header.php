@@ -14,17 +14,20 @@ session_start(); ?>
 
 
     <!--jquery-->
-    <script src="./js/jquery-3.1.1.js"></script>
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <script type="text/javascript" src="./js/jquery-3.1.1.js"></script>
+    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
 
     <!-- Bootstrap core CSS -->
     <link href="./css/bootstrap.css" rel="stylesheet">
     <!-- Bootstrap core js -->
-    <script src="js/bootstrap.js"></script>
+    <script type="text/javascript" src="js/bootstrap.js"></script>
 
     <!--Angular-->
-    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.5/angular.min.js"></script>
+    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.5/angular.min.js"></script>
     <script type="text/javascript" src="./app/app.js"></script>
+
+    <!--helper-->
+    <script type="text/javascript" src="./js/helper.js"></script>
 
     <!-- Custom styles for this template -->
     <link href="./css/styles.css" rel="stylesheet">

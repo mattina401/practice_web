@@ -179,7 +179,7 @@ app.controller('tasksController', function ($scope, $http) {
 });
 
 
-// send listId to modal
+// send listId to share modal
 app.controller('MainCtrl', ['$scope', 'dataShare',
     function ($scope, dataShare) {
         $scope.send = function (listId) {
@@ -189,9 +189,9 @@ app.controller('MainCtrl', ['$scope', 'dataShare',
     }
 ]);
 
-app.controller('MainCtrl2', ['$scope', '$http', 'dataShare',
+app.controller('MainCtrl2', ['$scope', '$http','$window', 'dataShare',
 
-    function ($scope, $http, dataShare) {
+    function ($scope, $http,$window, dataShare) {
 
         //variables
         $scope.inviteInfo = {
@@ -216,7 +216,42 @@ app.controller('MainCtrl2', ['$scope', '$http', 'dataShare',
         $scope.$on('data_shared', function () {
             var listId = dataShare.getData();
             $scope.inviteInfo.listId = listId;
+            $scope.getListInfo();
         });
+
+
+        $scope.getListInfo = function() {
+
+            var listId = dataShare.getData();
+
+            $http.post("../ajax/getListInfo.php?listId=" + $scope.inviteInfo.listId).success(function (data) {
+                $scope.getListInfoData = data;
+                console.log(data);
+                console.log(data[0].listName);
+                $scope.listName = data[0].listName;
+                $scope.description = data[0].description;
+
+
+            });
+        }
+
+
+        $scope.updateListInfo = function(listName,description) {
+
+            var updateListInfoData = {
+                listName: listName,
+                description: description,
+                listId: dataShare.getData()
+            }
+
+
+            $http.post("../ajax/updateListInfo.php",updateListInfoData).success(function (data) {
+                console.log(data);
+                $window.location.href = '../manage.php';
+
+            });
+        }
+
     }
 ]);
 

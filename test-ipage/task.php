@@ -53,7 +53,7 @@
                                 <a ng-click="Clicked=!Clicked;" class="pull-right"><i
                                         class="glyphicon glyphicon-pencil"></i></a>
 
-                                <form ng-init="Clicked=false; " ng-if="Clicked" id="newTaskForm" class="add-task">
+                                <form ng-init="Clicked=false;" ng-if="Clicked" id="newTaskForm" class="add-task">
                                     <div class="form-actions">
                                         <div class="input-group">
                                             <input type="text" class="form-control" name="comment" ng-model="editInput"
