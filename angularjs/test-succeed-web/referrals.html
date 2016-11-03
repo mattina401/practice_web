@@ -4,11 +4,16 @@
     <meta charset="UTF-8">
     <title>Title</title>
     <script src="../js/angular.js"></script>
+    <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.5.8/angular-messages.js"></script>
+    <script type="text/javascript">
+        angular.element(document.getElementsByTagName('head')).append(angular.element('<base href="' + window.location.pathname + '" />'));
+    </script>
+
 </head>
 <body>
 
 <div ng-app="myApp" ng-controller="cntrl">
-
+<!--
     <select>
         <option value="">Choose your city</option>
         <option ng-repeat="city in cities">{{city.CITY_NAME}}</option>
@@ -19,11 +24,68 @@
         <option ng-repeat="states in states">{{states.STATE_ABBREVIATION}}</option>
     </select>
 
+    <div ng-controller="MainCtrl">
+        <select ng-options="option for option in listOfOptions"
+                ng-model="selectedItem"
+                ng-change="selectedItemChanged()">
+        </select>
+
+        <p>This is the selected Item from the model: <b>{{selectedItem}}</b></p>
+        <p>This is the result of the ng-change function: <b>{{calculatedValue}}</b></p>
+
+    </div>
+-->
+
+    <div ng-controller="MainCtrl">
+        <select ng-options="states as states.STATE_ABBREVIATION for states in states"
+                ng-model="selectedItem"
+                ng-change="selectCities(selectedItem.STATE_ABBREVIATION)">
+        </select>
+
+        <p>This is the selected Item from the model: <b>{{selectedItem}}</b></p>
+        <p>This is the result of the ng-change function: <b>{{calculatedValue}}</b></p>
+
+    </div>
+
+    <div ng-controller="MainCtrl">
+        <select ng-options="city as city.CITY_NAME for city in cities"
+                ng-model="selectedItem">
+        </select>
+
+    </div>
+
+
+
+
+
+    <form name="form">
+        <label>
+            <input type="text" name="text" ng-model="text" ng-minlength="2" ng-maxlength="20" required>
+        </label>
+    </form>
+    <div ng-if="clicked">
+        <div ng-messages="form.text.$error" style="color:red" role="alert">
+            <div ng-message="required"> enter something</div>
+            <div ng-message="minlength"> too short</div>
+            <div ng-message="maxlength"> too long</div>
+        </div>
+    </div>
+    <input type="button" ng-click="click()">
+
 
 </div>
 
 <script>
-    var app = angular.module('myApp', []);
+    var app = angular.module('myApp', ['ngMessages']);
+
+
+    app.controller('MainCtrl', function($scope) {
+        $scope.listOfOptions = ['One', 'Two', 'Three'];
+
+        $scope.selectedItemChanged = function(){
+            $scope.calculatedValue = 'You selected number ' + $scope.selectedItem;
+        }
+    });
 
 
     app.controller('cntrl', function ($scope, $http) {
@@ -32,20 +94,26 @@
         $scope.selectStates = function () {
             $http.get("select-state.php").success(function (data) {
                 $scope.states = data;
+                console.log(data);
             });
         }
 
         $scope.selectStates();
 
-        $scope.selectCities = function () {
-            $http.get("select-city.php").success(function (data) {
+        $scope.selectCities = function (selectedItem) {
+            $http.get("select-city.php?selectedItem=" + selectedItem).success(function (data) {
                 $scope.cities = data;
+                console.log(selectedItem);
+                console.log(data);
             });
         }
 
+        $scope.clicked = false;
+        $scope.click = function () {
+            $scope.clicked = true;
+        }
+
         $scope.selectCities();
-
-
 
 
     });

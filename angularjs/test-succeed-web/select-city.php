@@ -7,13 +7,17 @@
  */
 include "connectdb.php";
 
-$query ="SELECT DISTINCT CITY_NAME FROM city";
-$rs=$dbhandle->query($query);
+if (isset($_GET['selectedItem'])) {
+    $state = $_GET['selectedItem'];
 
-while($row=$rs->fetch_assoc()){
-    set_time_limit(0);
-    $data[]=$row;
+
+    $query = "SELECT DISTINCT CITY_NAME FROM city WHERE CITY_STATE = '$state'";
+    $rs = $dbhandle->query($query);
+
+    while ($row = $rs->fetch_assoc()) {
+        set_time_limit(0);
+        $data[] = $row;
+    }
+    print json_encode($data);
 }
-print json_encode($data);
-
 ?>
