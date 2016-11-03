@@ -1,11 +1,14 @@
 /**
  * Created by kim on 2016-10-21.
  */
-var app = angular.module('myApp', []);
+var app = angular.module('myApp', ['ngMessages']);
 
 app.controller('cntrl', function ($scope, $http, $window) {
 
+
+
     $scope.login = function (loginEmail, loginPassword) {
+
         $http.post("../ajax/login.php?loginEmail=" + loginEmail + "&loginPassword=" + loginPassword).success(function (data) {
             $scope.loginData = data;
             console.log(data);
@@ -13,22 +16,34 @@ app.controller('cntrl', function ($scope, $http, $window) {
             // login success
             if (data == "1") {
                 $window.location.href = '../manage.php';
+            } else {
+                $scope.errorLogin = "check email or password again";
             }
         })
     }
 
     $scope.signup = function (signupEmail, signupPassword, signupConfirmPassword) {
 
-        $scope.signupMsg = "";
-        if (signupPassword != signupConfirmPassword) {
-            $scope.signupMsg = "Password does not match the confirm password ";
+        if($scope.validateEmail(signupEmail)){
+            if (signupPassword != signupConfirmPassword) {
+                $scope.signupMsg = "Password does not match the confirm password ";
+            } else {
+                $http.post("../ajax/signup.php?signupEmail=" + signupEmail + "&signupPassword=" + signupPassword).success(function (data) {
+                    $scope.signupData = data;
+                    console.log(data);
+                    $window.location.href = '../manage.php';
+                })
+            }
         } else {
-            $http.post("../ajax/signup.php?signupEmail=" + signupEmail + "&signupPassword=" + signupPassword).success(function (data) {
-                $scope.signupData = data;
-                console.log(data);
-                $window.location.href = '../manage.php';
-            })
+            $scope.signupMsg = "Please use valid email address";
         }
+
+    }
+
+
+    $scope.validateEmail = function (email) {
+        var re = /^(([^<>()[\]\\.,;:\s@\"]+(\.[^<>()[\]\\.,;:\s@\"]+)*)|(\".+\"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+        return re.test(email);
     }
 
     $scope.logout = function () {
@@ -56,6 +71,10 @@ app.controller('cntrl', function ($scope, $http, $window) {
             })
         }
     }
+
+
+
+
 });
 
 //listController

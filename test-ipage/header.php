@@ -24,6 +24,7 @@ session_start(); ?>
 
     <!--Angular-->
     <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.5/angular.min.js"></script>
+    <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.5.8/angular-messages.js"></script>
     <script type="text/javascript" src="./app/app.js"></script>
 
     <!--helper-->
@@ -48,7 +49,6 @@ session_start(); ?>
         <nav class="blog-nav">
             <p class="blog-nav-item" style="font-size: large; padding-right: 20px;">Link2List</p>
             <a class="blog-nav-item" href="index.php">Home</a>
-            <a class="blog-nav-item" href="#">New features</a>
             <a class="blog-nav-item" href="#">About</a>
             <a class="blog-nav-item notvisible" style="display: <?php
             if ($_SESSION['userId'] == null)
@@ -94,16 +94,16 @@ session_start(); ?>
             <div class="modal-body">
                 <div id="myTabContent" class="tab-content">
                     <div class="tab-pane fade active in" id="signin">
-                        <form class="form-horizontal">
+                        <form class="form-horizontal" name="signInForm">
                             <fieldset>
                                 <!-- Sign In Form -->
                                 <!-- Text input-->
                                 <div class="control-group">
                                     <label class="control-label" for="loginEmail">E-mail:</label>
                                     <div class="controls">
-                                        <input required="" id="loginEmail" ng-model="loginEmail" name="loginEmail"
+                                        <input id="loginEmail" ng-model="loginEmail" name="loginEmail"
                                                type="text" class="form-control" placeholder="example@example.com"
-                                               class="input-medium" required="">
+                                               class="input-medium">
                                     </div>
                                 </div>
 
@@ -115,6 +115,11 @@ session_start(); ?>
                                                name="loginPassword" class="form-control" type="password"
                                                placeholder="********" class="input-medium">
                                     </div>
+                                </div>
+
+                                <!-- error -->
+                                <div>
+                                    <p style="color: red; font-size: 12px">{{errorLogin}} </p>
                                 </div>
 
                                 <!-- Button -->
@@ -164,8 +169,10 @@ session_start(); ?>
                                     </div>
                                 </div>
 
-                                {{signupMsg}}
-
+                                <!-- error -->
+                                <div>
+                                    <p style="color: red; font-size: 12px">{{signupMsg}} </p>
+                                </div>
 
                                 <!-- Button -->
                                 <div class="control-group">

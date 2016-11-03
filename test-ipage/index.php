@@ -3,8 +3,8 @@
 <section class="showcase">
     <div class="container">
         <h1>Share your List</h1>
-        <p>Connect a link for your grocery list with others</p>
-        <a class="btn btn-primary btn-lg"> read more</a>
+        <p>Connect your tasks with others</p>
+        <a class="btn btn-primary btn-lg" href=""> read more</a>
     </div>
 </section>
 

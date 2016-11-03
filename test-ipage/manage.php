@@ -1,7 +1,7 @@
 <?php include("header.php"); ?>
 <div style="display: <?php
 if ($_SESSION['userId'] == null)
-    echo "none"
+    echo "none";
 ?>">
 
     <section ng-controller="listController">
