@@ -49,7 +49,6 @@ session_start(); ?>
         <nav class="blog-nav">
             <p class="blog-nav-item" style="font-size: large; padding-right: 20px;">Link2List</p>
             <a class="blog-nav-item" href="index.php">Home</a>
-            <a class="blog-nav-item" href="#">About</a>
             <a class="blog-nav-item notvisible" style="display: <?php
             if ($_SESSION['userId'] == null)
                 echo "none"

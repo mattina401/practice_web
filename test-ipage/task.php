@@ -49,12 +49,12 @@
                                     value="{{item.status}}"
                                     ng-checked="item.status==2"
                                     ng-click="toggleStatus(item.itemId,item.status, item.itemName)"/>
-                                <span ng-class="{strike:item.status==2}">{{item.itemName}} [{{item.itemId}}]</span>
+                                <span ng-class="{strike:item.status==2}">{{item.itemName}}</span>
                                 <a ng-click="deleteTask(item.itemId)" class="pull-right"><i
                                         class="glyphicon glyphicon-trash"></i> remove</a>
                                 <a ng-click="Clicked=!Clicked;" class="pull-right"><i
-                                        class="glyphicon glyphicon-pencil"></i> edit</a>
-                                <span class="pull-right"  style="font-size: 10px">Last Updated On {{item.updatedTime}}</span>
+                                        class="glyphicon glyphicon-pencil"></i> edit&nbsp;</a>
+                                <span class="pull-right"  style="font-size: 10px">Last Updated On {{item.updatedTime}}&nbsp;&nbsp;&nbsp;</span>
 
 
                                 <form ng-init="Clicked=false;" ng-if="Clicked" id="newTaskForm" class="add-task">

@@ -173,7 +173,7 @@ h6, .h6 {
     border-bottom: #ccc 1px solid;
     margin-bottom: 30px;
     color: #fff;
-    background: url("../img/showcase6.jpg") no-repeat center center;
+    background: url("../img/showcase7.jpg") no-repeat center center;
     background-size: cover;
 }
 
@@ -344,4 +344,33 @@ div.task label.checkbox{
     color: #FFF;
     font-size: 24px;
     text-shadow: none;
+}
+
+
+.intro h1, .feature h1 {
+    font: bold 34px "Century Schoolbook", Georgia, Times, serif;
+    color: #333;
+    line-height: 90%;
+    margin: .2em 0 .4em 0;
+    letter-spacing: -2px;
+}
+
+.intro p, .feature p {
+    color: #76879b;
+    margin: 5px;
+    font-family: "Lucida Grande", Verdana, Helvetica, Arial, sans-serif;
+    font-size: 15px;
+}
+
+.feature img {
+     height: 300px;
+     width: 500px;
+ }
+
+.feature {
+    height: 1350px;
+}
+
+.intro {
+    height: 500px;
 }

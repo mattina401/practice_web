@@ -169,7 +169,7 @@ if ($_SESSION['userId'] == null)
                 <br>
                 <div class="bs-example bs-example-tabs">
                     <ul class="nav nav-tabs">
-                        <h1>Share {{inviteInfo.listId}}</h1>
+                        <h1>Share</h1>
                     </ul>
                 </div>
                 <div class="modal-body">
